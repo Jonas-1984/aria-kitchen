@@ -5,7 +5,11 @@ Website für einen Handwerksbetrieb, der Küchenschränke **herstellt und aufbau
 
 - Sprache: **Persisch (fa)**, Schreibrichtung **RTL**
 - Eine lange Single-Page-Seite, Navigation per Scrollen
-- Fester Header oben, Footer unten, jeder Abschnitt durch eine dünne Trennlinie getrennt
+- Fester Header oben, Footer unten; Trennlinien zwischen den Parts blenden zu
+  beiden Seiten aus (Token `--divider`, Gradient-Linie auf 1px-Pseudo-Elementen)
+- Glassmorphism: Header, Footer, die drei „خدمات"-Karten, die Icon-Badges in
+  „مراحل کار" und alle „تماس"-Formularfelder (Tokens `--glass-*`)
+- „مراحل کار" ohne Nummerierung – Icon-Badge (Lucide `step-back`) statt Zahl
 - Fixierter Ganzseiten-Hintergrund: `images/background.jpg` (Steintextur) mit
   halbtransparenter `#0d1b2a`-Überlagerung (`body::before`)
 

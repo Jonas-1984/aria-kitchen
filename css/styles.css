@@ -43,6 +43,21 @@
 
   --radius: 10px;
   --font: "Dana", "IRANSans", "IRANSansX", "Vazirmatn", Tahoma, system-ui, sans-serif;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(248, 249, 250, 0.055);
+  --glass-border: rgba(248, 249, 250, 0.14);
+  --glass-blur: blur(16px) saturate(140%);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+
+  /* Trennlinie, die zu beiden Seiten ausblendet */
+  --divider: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(248, 249, 250, 0.18) 22%,
+    rgba(248, 249, 250, 0.18) 78%,
+    transparent 100%
+  );
 }
 
 /* ---------- Reset ---------- */
@@ -113,14 +128,25 @@ h3 {
   max-width: var(--container-narrow);
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header (Glassmorphism) ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(13, 27, 42, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--hairline);
+  background: rgba(13, 27, 42, 0.55);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* ausblendende Trennlinie unter dem Header */
+.site-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--divider);
 }
 
 .header-inner {
@@ -205,12 +231,19 @@ h3 {
 
 /* ---------- Abschnitte + Trennlinien ---------- */
 .section {
+  position: relative;
   padding-block: var(--space-section);
-  border-top: 1px solid var(--hairline);
 }
 
-.section:first-of-type {
-  border-top: 0;
+/* dünne Trennlinie zwischen den Parts, blendet zu beiden Seiten aus */
+.section:not(:first-of-type)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--divider);
 }
 
 .section-title {
@@ -300,10 +333,13 @@ h3 {
 }
 
 .card {
-  background: var(--bg-elevated);
-  border: 1px solid var(--hairline);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   padding: 1.75rem;
+  box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(248, 249, 250, 0.08);
 }
 
 .card h3 {
@@ -325,23 +361,48 @@ h3 {
 }
 
 .steps li {
+  position: relative;
   display: flex;
   gap: 1.25rem;
   align-items: flex-start;
   padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--hairline);
+}
+
+/* ausblendende Trennlinie zwischen den Schritten */
+.steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--divider);
 }
 
 .steps li:last-child {
-  border-bottom: 0;
   padding-bottom: 0;
 }
 
-.step-num {
+/* Icon-Badge statt Nummerierung (Glassmorphism) */
+.step-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 12px;
   color: var(--accent);
-  font-weight: 700;
-  font-size: 1.05rem;
-  min-width: 2.5rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: inset 0 1px 0 rgba(248, 249, 250, 0.08);
+}
+
+.step-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 .steps h3 {
@@ -388,24 +449,47 @@ h3 {
 .field textarea {
   width: 100%;
   padding: 0.75rem 0.9rem;
-  background: var(--bg-elevated);
-  border: 1px solid var(--hairline);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   color: var(--text);
   font: inherit;
   font-size: 0.96rem;
+  box-shadow: inset 0 1px 0 rgba(248, 249, 250, 0.06);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-muted);
 }
 
 .field input:focus,
 .field textarea:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
+  border-color: transparent;
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (Glassmorphism) ---------- */
 .site-footer {
-  border-top: 1px solid var(--hairline);
+  position: relative;
   padding-block: 3rem;
+  background: rgba(13, 27, 42, 0.55);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+/* ausblendende Trennlinie über dem Footer */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: var(--divider);
 }
 
 .footer-inner {
