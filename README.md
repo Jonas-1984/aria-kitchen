@@ -10,6 +10,10 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
   beiden Seiten aus (Token `--divider`, Gradient-Linie auf 1px-Pseudo-Elementen)
 - Glassmorphism: Header, Footer, die drei „خدمات"-Karten, die Icon-Badges in
   „مراحل کار" und alle „تماس"-Formularfelder (Tokens `--glass-*`)
+- Neomorphism: alle Buttons, das Menü (neomorphe Pille + Hamburger) und die
+  Social-Media-Icons im Footer (Tokens `--neo-*`)
+- Footer: Social-Media (Instagram, LinkedIn, YouTube, Facebook) direkt unter
+  der Trennlinie, linksbündig
 - „مراحل کار" ohne Nummerierung – Icon-Badge (Lucide `step-back`) statt Zahl
 - Fixierter Ganzseiten-Hintergrund: `images/background.jpg` (Steintextur) mit
   halbtransparenter `#0d1b2a`-Überlagerung (`body::before`)
