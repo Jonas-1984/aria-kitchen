@@ -16,10 +16,13 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
 - Menüleiste: Uiverse-Stil (adamgiebl), Neomorphism-Buttons. Nur Icons,
   keine Beschriftung – Hilfstext als Tooltip (`data-tooltip`), auf Mobil
   als sichtbares Label. Erster Eintrag = Home (`#top`).
-- Footer-Widget (Neomorphism), linke Spalte unter den Social-Icons,
-  gegenüber dem Kontaktblock: Uhrzeit, Datum + Wochentag auf Persisch
-  (`toLocaleString("fa-IR")`), Wetter für Tehran via Open-Meteo (best effort,
-  Zeile wird bei Fehler ausgeblendet)
+- Footer-Widget (Neomorphism), linke Spalte unter den Social-Icons (auf
+  deren Breite gestreckt), gegenüber dem Kontaktblock: Uhrzeit, Datum +
+  Wochentag auf Persisch (`toLocaleString("fa-IR")`), Wetter für Tehran via
+  Open-Meteo (best effort, Zeile wird bei Fehler ausgeblendet)
+- Animierte graue Katze (`.hero-cat`), sitzt auf der Linie unten im Hero:
+  Schwanzschwung, Blinzeln, Atmen; per `prefers-reduced-motion` / unter
+  560px abgeschaltet
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
   und rotierendem Icon, eingefärbt in Palette-Blau (`.styled-button`)
 - Footer: links Social-Media (Instagram, LinkedIn, YouTube, Facebook) +
