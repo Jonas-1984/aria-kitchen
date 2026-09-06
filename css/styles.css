@@ -726,15 +726,11 @@ h3 {
   background: var(--divider);
 }
 
-/* Kopfzeile des Footers: Social links, Info-Widget rechts */
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1.75rem;
-  margin-bottom: 2.25rem;
-  direction: ltr; /* Social links, Widget rechts */
+/* linke Spalte im Footer: Social oben, Info-Widget darunter */
+.footer-aside {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: start;
 }
 
 /* Social-Media direkt unter der Linie, linksbündig (Neomorphism) */
@@ -866,28 +862,11 @@ h3 {
   color: var(--accent);
 }
 
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.25rem;
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links a {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  transition: color 0.15s ease;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
 .footer-legal {
   color: var(--text-muted);
   font-size: 0.85rem;
   width: 100%;
+  margin-top: 2.25rem;
 }
 
 /* ---------- Responsive ---------- */

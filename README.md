@@ -16,14 +16,16 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
 - Menüleiste: Uiverse-Stil (adamgiebl), Neomorphism-Buttons. Nur Icons,
   keine Beschriftung – Hilfstext als Tooltip (`data-tooltip`), auf Mobil
   als sichtbares Label. Erster Eintrag = Home (`#top`).
-- Footer-Widget (Neomorphism): Uhrzeit, Datum + Wochentag auf Persisch
+- Footer-Widget (Neomorphism), linke Spalte unter den Social-Icons,
+  gegenüber dem Kontaktblock: Uhrzeit, Datum + Wochentag auf Persisch
   (`toLocaleString("fa-IR")`), Wetter für Tehran via Open-Meteo (best effort,
   Zeile wird bei Fehler ausgeblendet)
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
   und rotierendem Icon, eingefärbt in Palette-Blau (`.styled-button`)
-- Footer: Social-Media (Instagram, LinkedIn, YouTube, Facebook) direkt unter
-  der Trennlinie linksbündig; rechts der Kontaktblock (Firmenname, Adresse,
-  Mobil, E-Mail, Website) mit Icons; kein Logo mehr im Footer
+- Footer: links Social-Media (Instagram, LinkedIn, YouTube, Facebook) +
+  Info-Widget darunter; rechts der Kontaktblock (Firmenname, Adresse, Mobil,
+  E-Mail, Website) mit Icons; Copyright unten. Kein Logo, keine Menü-Links
+  im Footer
 - „مراحل کار" ohne Nummerierung – Icon-Badge (Lucide `step-back`) statt Zahl
 - Fixierter Ganzseiten-Hintergrund: `images/background.jpg` (Steintextur) mit
   halbtransparenter `#0d1b2a`-Überlagerung (`body::before`)
