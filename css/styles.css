@@ -259,13 +259,14 @@ h3 {
 }
 
 .nav-list a {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
   color: var(--text);
   font-size: 1rem;
-  padding: 0.5em 1.2em;
-  border-radius: 0.5em;
+  padding: 0.6em;
+  border-radius: 0.6em;
   background: var(--neo-bg);
   border: 1px solid transparent;
   box-shadow:
@@ -275,14 +276,37 @@ h3 {
 }
 
 .nav-list a svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.15rem;
+  height: 1.15rem;
   flex-shrink: 0;
 }
 
-/* Home: nur Icon, quadratischer */
-.nav-home {
-  padding-inline: 0.75em;
+/* Hilfstext (Tooltip) unter dem Icon */
+.nav-list a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 0.3rem 0.65rem;
+  border-radius: 8px;
+  background: rgba(13, 27, 42, 0.96);
+  border: 1px solid var(--hairline);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 60;
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .nav-list a:hover {
@@ -702,14 +726,51 @@ h3 {
   background: var(--divider);
 }
 
+/* Kopfzeile des Footers: Social links, Info-Widget rechts */
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.75rem;
+  margin-bottom: 2.25rem;
+  direction: ltr; /* Social links, Widget rechts */
+}
+
 /* Social-Media direkt unter der Linie, linksbündig (Neomorphism) */
 .footer-social {
   display: flex;
   gap: 1rem;
   list-style: none;
   padding: 0;
-  margin: 0 0 2.25rem;
+  margin: 0;
   direction: ltr; /* Reihenfolge Instagram → Facebook, linksbündig */
+}
+
+/* Neomorphes Info-Widget: Uhrzeit, Datum + Wochentag, Wetter (persisch) */
+.footer-widget {
+  direction: rtl;
+  display: grid;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  background: var(--neo-bg);
+  box-shadow: var(--neo-out);
+}
+
+.footer-widget-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.footer-widget-row svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent);
 }
 
 /* Social-Buttons – Uiverse-Stil (talhabangyal), an die dunkle Palette angepasst */
@@ -878,15 +939,22 @@ h3 {
   .nav-list a {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    justify-content: flex-start;
+    gap: 0.7rem;
     padding: 0.8rem 1.1rem;
     box-shadow:
       4px 4px 10px rgba(0, 0, 0, 0.5),
       -4px -4px 10px rgba(255, 255, 255, 0.045);
   }
 
-  .nav-home {
-    justify-content: center;
+  /* im Dropdown die Hilfstexte als sichtbare Beschriftung zeigen */
+  .nav-list a::after {
+    content: none;
+  }
+
+  .nav-list a::before {
+    content: attr(data-tooltip);
+    font-size: 1rem;
   }
 
   .grid--3 {

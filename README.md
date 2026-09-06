@@ -13,10 +13,12 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
 - Neomorphism: Buttons und Hamburger (Tokens `--neo-*`)
 - Social-Media-Buttons im Footer: Uiverse-Stil (talhabangyal) – weiche
   Kachel, beim Hover eingedrückt + nach unten versetzt, Icon skaliert
-- Menüleiste: Uiverse-Stil (adamgiebl) – jeder Eintrag ein weiches
-  Neomorphism-Button, Hover = weiße Kante, aktiver Eintrag eingedrückt.
-  Erster Eintrag = Home-Icon (nur Icon, Ziel `#top`); die übrigen mit
-  Lucide-Icon + Label (notebook-pen / briefcase / book-open / contact-round)
+- Menüleiste: Uiverse-Stil (adamgiebl), Neomorphism-Buttons. Nur Icons,
+  keine Beschriftung – Hilfstext als Tooltip (`data-tooltip`), auf Mobil
+  als sichtbares Label. Erster Eintrag = Home (`#top`).
+- Footer-Widget (Neomorphism): Uhrzeit, Datum + Wochentag auf Persisch
+  (`toLocaleString("fa-IR")`), Wetter für Tehran via Open-Meteo (best effort,
+  Zeile wird bei Fehler ausgeblendet)
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
   und rotierendem Icon, eingefärbt in Palette-Blau (`.styled-button`)
 - Footer: Social-Media (Instagram, LinkedIn, YouTube, Facebook) direkt unter

@@ -69,4 +69,84 @@
       yearEl.textContent = String(year);
     }
   }
+
+  /* ---------- Footer-Widget: Uhrzeit, Datum + Wochentag (persisch) ---------- */
+  var fwTime = document.getElementById("fw-time");
+  var fwDate = document.getElementById("fw-date");
+
+  function updateFooterClock() {
+    var now = new Date();
+    try {
+      if (fwTime) {
+        fwTime.textContent = now.toLocaleTimeString("fa-IR", {
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+      }
+      if (fwDate) {
+        fwDate.textContent = now.toLocaleDateString("fa-IR", {
+          weekday: "long",
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        });
+      }
+    } catch (e) {
+      if (fwTime) fwTime.textContent = now.toLocaleTimeString();
+      if (fwDate) fwDate.textContent = now.toLocaleDateString();
+    }
+  }
+
+  if (fwTime || fwDate) {
+    updateFooterClock();
+    setInterval(updateFooterClock, 15000);
+  }
+
+  /* ---------- Footer-Widget: Wetter (Tehran, persisch) ---------- */
+  var fwWeather = document.getElementById("fw-weather");
+  var fwWeatherRow = document.getElementById("fw-weather-row");
+
+  function weatherTextFa(code) {
+    if (code === 0) return "آفتابی";
+    if (code === 1 || code === 2) return "کمی ابری";
+    if (code === 3) return "ابری";
+    if (code === 45 || code === 48) return "مه";
+    if (code >= 51 && code <= 57) return "نم‌نم باران";
+    if (code >= 61 && code <= 67) return "بارانی";
+    if (code >= 71 && code <= 77) return "برفی";
+    if (code >= 80 && code <= 82) return "رگبار";
+    if (code >= 85 && code <= 86) return "بارش برف";
+    if (code >= 95) return "رعد و برق";
+    return "";
+  }
+
+  function toFaDigits(n) {
+    try {
+      return Number(n).toLocaleString("fa-IR", { useGrouping: false });
+    } catch (e) {
+      return String(n);
+    }
+  }
+
+  if (fwWeather && window.fetch) {
+    fetch(
+      "https://api.open-meteo.com/v1/forecast?latitude=35.6892&longitude=51.389&current=temperature_2m,weather_code&timezone=Asia/Tehran"
+    )
+      .then(function (r) {
+        return r.ok ? r.json() : Promise.reject();
+      })
+      .then(function (data) {
+        var c = data && data.current;
+        if (!c || typeof c.temperature_2m !== "number") return Promise.reject();
+        var desc = weatherTextFa(c.weather_code);
+        fwWeather.textContent =
+          "تهران: " + toFaDigits(Math.round(c.temperature_2m)) + "°" +
+          (desc ? " " + desc : "");
+      })
+      .catch(function () {
+        if (fwWeatherRow) fwWeatherRow.hidden = true;
+      });
+  } else if (fwWeatherRow) {
+    fwWeatherRow.hidden = true;
+  }
 })();
