@@ -70,7 +70,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 3.5rem; /* Platz für den fixierten Header */
+  scroll-padding-top: 10rem; /* Platz für den fixierten Header */
   background-color: var(--bg); /* Fallback hinter dem Hintergrundbild */
 }
 
@@ -153,8 +153,7 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 2.4rem;
-  padding-block: 0.35rem;
+  min-height: 9rem;
 }
 
 .brand {
@@ -166,7 +165,7 @@ h3 {
 }
 
 .brand-logo {
-  height: 1.1rem;
+  height: 4.2rem;
   width: auto;
   display: block;
 }
