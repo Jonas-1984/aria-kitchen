@@ -158,16 +158,16 @@ h3 {
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.7rem;
   font-weight: 700;
   white-space: nowrap;
-  /* kein letter-spacing: würde persische Buchstabenverbindungen aufbrechen */
 }
 
-.brand-mark {
-  color: var(--text);
-  font-size: 1.25rem;
+.brand-logo {
+  height: 2.1rem;
+  width: auto;
+  display: block;
 }
 
 /* Slogan neben dem Logo */
@@ -511,8 +511,8 @@ h3 {
 
 .footer-brand {
   display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.7rem;
 }
 
 .footer-links {
