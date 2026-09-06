@@ -6,6 +6,8 @@ Website für einen Handwerksbetrieb, der Küchenschränke **herstellt und aufbau
 - Sprache: **Persisch (fa)**, Schreibrichtung **RTL**
 - Eine lange Single-Page-Seite, Navigation per Scrollen
 - Fester Header oben, Footer unten, jeder Abschnitt durch eine dünne Trennlinie getrennt
+- Fixierter Ganzseiten-Hintergrund: `images/background.jpg` (Steintextur) mit
+  halbtransparenter `#0d1b2a`-Überlagerung (`body::before`)
 
 ## Schriftart
 

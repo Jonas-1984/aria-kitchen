@@ -56,15 +56,32 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem; /* Platz für den fixierten Header */
+  background-color: var(--bg); /* Fallback hinter dem Hintergrundbild */
 }
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: var(--font);
   font-size: 1rem;
   line-height: 1.85; /* Persisch braucht etwas mehr Zeilenhöhe */
   -webkit-font-smoothing: antialiased;
+}
+
+/* Fixierter Ganzseiten-Hintergrund: Steintextur + Navy-Überlagerung.
+   Als position:fixed Pseudo-Element (zuverlässiger als background-attachment:fixed,
+   v. a. auf iOS). Liegt hinter dem gesamten Inhalt. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to bottom, rgba(13, 27, 42, 0.84), rgba(13, 27, 42, 0.94)),
+    url("../images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 img {
