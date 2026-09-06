@@ -10,8 +10,9 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
   beiden Seiten aus (Token `--divider`, Gradient-Linie auf 1px-Pseudo-Elementen)
 - Glassmorphism: Header, Footer, die drei „خدمات"-Karten, die Icon-Badges in
   „مراحل کار" und alle „تماس"-Formularfelder (Tokens `--glass-*`)
-- Neomorphism: Buttons, Hamburger und die Social-Media-Icons im Footer
-  (Tokens `--neo-*`)
+- Neomorphism: Buttons und Hamburger (Tokens `--neo-*`)
+- Social-Media-Buttons im Footer: Uiverse-Stil (talhabangyal) – weiche
+  Kachel, beim Hover eingedrückt + nach unten versetzt, Icon skaliert
 - Menüleiste: Uiverse-Stil (adamgiebl) – jeder Eintrag ein weiches
   Neomorphism-Button, Hover = weiße Kante, aktiver Eintrag eingedrückt
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
