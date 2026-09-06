@@ -16,6 +16,8 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
 - Menüleiste: Uiverse-Stil (adamgiebl), Neomorphism-Buttons. Nur Icons,
   keine Beschriftung – Hilfstext als Tooltip (`data-tooltip`), auf Mobil
   als sichtbares Label. Erster Eintrag = Home (`#top`).
+- „نمونه‌کارها"-Kacheln: beim Hover eine dünne, glänzend-blaue Linie, die
+  per rotierendem Konus-Verlauf (`--tile-angle`) durch einige Ecken wandert
 - Footer-Widget (Neomorphism), linke Spalte unter den Social-Icons (auf
   deren Breite gestreckt), gegenüber dem Kontaktblock: Uhrzeit, Datum +
   Wochentag auf Persisch (`toLocaleString("fa-IR")`), Wetter für Tehran via

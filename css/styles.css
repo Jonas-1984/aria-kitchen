@@ -180,6 +180,12 @@ h3 {
   inherits: false;
 }
 
+@property --tile-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 /* Logo-Chip: Liquid Glass + neomorpher Schatten + animierte Glanz-Border */
 .logo-chip {
   position: relative;
@@ -265,7 +271,7 @@ h3 {
   justify-content: center;
   color: var(--text);
   font-size: 1rem;
-  padding: 1.2em;
+  padding: 0.9em;
   border-radius: 0.7em;
   background: var(--neo-bg);
   /* dünne, dunkle, dezente Kante */
@@ -678,6 +684,7 @@ h3 {
 
 /* ---------- Platzhalter-Kacheln ---------- */
 .placeholder-tile {
+  position: relative;
   aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
@@ -687,6 +694,48 @@ h3 {
   border-radius: var(--radius);
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+/* beim Hover: dünne, glänzend-blaue Linie, die durch einige Ecken wandert */
+.placeholder-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--tile-angle),
+    transparent 0deg,
+    rgba(0, 119, 182, 0.12) 42deg,
+    #82cdf5 70deg,
+    rgba(0, 119, 182, 0.12) 98deg,
+    transparent 150deg,
+    transparent 212deg,
+    rgba(0, 119, 182, 0.12) 250deg,
+    #4aa8e0 278deg,
+    rgba(0, 119, 182, 0.12) 306deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.placeholder-tile:hover::before {
+  opacity: 1;
+  animation: tile-shine 4s linear infinite;
+}
+
+@keyframes tile-shine {
+  to { --tile-angle: 360deg; }
 }
 
 /* ---------- Kontaktformular ---------- */
@@ -989,7 +1038,8 @@ h3 {
 
   .logo-chip::before,
   .hero-cat,
-  .hero-cat * {
+  .hero-cat *,
+  .placeholder-tile:hover::before {
     animation: none !important;
   }
 }
