@@ -1,7 +1,8 @@
-# ARIA Küchen · آریا کابینت
+# ARIA Holz · آورده‌های چوبی آریا
 
-Website für einen Handwerksbetrieb, der Küchenschränke **herstellt und aufbaut**
-(کابینت آشپزخانه – ساخت و نصب).
+Website für eine Tischlerei / einen Holzbetrieb: **Innenausbau, Einbauschränke,
+Küchenschränke und Sonderkonstruktionen aus Holz** – Planung, Fertigung und
+Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، کابینت آشپزخانه و سازه‌های چوبی سفارشی).
 
 - Sprache: **Persisch (fa)**, Schreibrichtung **RTL**
 - Eine lange Single-Page-Seite, Navigation per Scrollen
