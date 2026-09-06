@@ -740,14 +740,55 @@ h3 {
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 1.5rem 2.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem 3rem;
 }
 
-.footer-brand {
-  display: flex;
-  align-items: center;
+/* Kontaktinfos rechts im Footer */
+.footer-contact {
+  max-width: 32rem;
+}
+
+.footer-contact-name {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
   gap: 0.7rem;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.footer-contact li svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  color: var(--accent);
+}
+
+.footer-contact a {
+  color: var(--text-muted);
+  transition: color 0.15s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--accent);
 }
 
 .footer-links {

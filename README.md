@@ -18,7 +18,8 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
   und rotierendem Icon, eingefärbt in Palette-Blau (`.styled-button`)
 - Footer: Social-Media (Instagram, LinkedIn, YouTube, Facebook) direkt unter
-  der Trennlinie, linksbündig
+  der Trennlinie linksbündig; rechts der Kontaktblock (Firmenname, Adresse,
+  Mobil, E-Mail, Website) mit Icons; kein Logo mehr im Footer
 - „مراحل کار" ohne Nummerierung – Icon-Badge (Lucide `step-back`) statt Zahl
 - Fixierter Ganzseiten-Hintergrund: `images/background.jpg` (Steintextur) mit
   halbtransparenter `#0d1b2a`-Überlagerung (`body::before`)
