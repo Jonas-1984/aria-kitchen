@@ -425,34 +425,6 @@ h3 {
   font-size: 1.08rem;
 }
 
-/* ---------- animierte Katze auf der Linie im Hero ---------- */
-/* SVG mit eigener SMIL-Animation (anime/Black cat by PoPoF.svg,
-   grau eingefärbt + viewBox auf die Katze zugeschnitten) */
-.hero-cat {
-  position: absolute;
-  left: min(42%, calc(2% + 10cm));
-  bottom: -4px;
-  width: clamp(84px, 10vw, 138px);
-  aspect-ratio: 70 / 82;      /* Fenster auf die Katze (leere SVG-Ränder werden beschnitten) */
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
-  animation: cat-fade-in 1.2s ease 0.3s both;
-}
-
-.hero-cat img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;              /* volle Katze, leere SVG-Ränder werden weggeschnitten */
-  object-position: center bottom;
-  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.35));
-}
-
-@keyframes cat-fade-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
 
 /* ---------- Buttons ---------- */
 .btn-row {
@@ -1029,20 +1001,12 @@ h3 {
   }
 }
 
-@media (max-width: 560px) {
-  .hero-cat {
-    display: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .logo-chip::before,
-  .hero-cat,
-  .hero-cat *,
   .placeholder-tile:hover::before {
     animation: none !important;
   }

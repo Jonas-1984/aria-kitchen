@@ -22,11 +22,6 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
   deren Breite gestreckt), gegenüber dem Kontaktblock: Uhrzeit, Datum +
   Wochentag auf Persisch (`toLocaleString("fa-IR")`), Wetter für Tehran via
   Open-Meteo (best effort, Zeile wird bei Fehler ausgeblendet)
-- Animierte Katze (`.hero-cat`), sitzt auf der Linie unten im Hero:
-  `images/cat.svg` = „Black cat by PoPoF" (SMIL-Animation), eingefärbt
-  `#1b263b`; volle viewBox, der leere SVG-Rand wird per `object-fit: cover`
-  im `.hero-cat`-Fenster weggeschnitten. Original unter `anime/`. Unter
-  560px ausgeblendet.
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
   und rotierendem Icon, eingefärbt in Palette-Blau (`.styled-button`)
 - Footer: links Social-Media (Instagram, LinkedIn, YouTube, Facebook) +
