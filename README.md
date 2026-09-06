@@ -52,6 +52,7 @@ und den `@font-face`-Block oben in `css/styles.css` aktivieren.
 
 ```
 index.html          Seiteninhalt (Header, Abschnitte, Footer) – lang="fa" dir="rtl"
+privacy.html        Datenschutzerklärung (persisch), verlinkt aus dem Kontaktformular
 css/styles.css      Styles, Farb-Tokens als CSS-Variablen, Dana-Import
 js/main.js          Mobiles Menü, aktive Navigation, Footer-Jahr (persische Ziffern)
 images/logo.svg     Wortmarke „ARIA": Buchstaben mit blauer Liquid-Glass-
