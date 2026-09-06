@@ -936,6 +936,13 @@ h3 {
   font-size: 0.9rem;
 }
 
+.footer-credit {
+  margin: 0.85rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+
 .footer-widget-row svg {
   width: 18px;
   height: 18px;
