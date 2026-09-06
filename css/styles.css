@@ -173,21 +173,66 @@ h3 {
   white-space: nowrap;
 }
 
-/* Logo als Liquid-Glass-Chip mit neomorphem Schatten und feiner Außenlinie */
-.brand-logo {
-  box-sizing: content-box;
-  height: 3.4rem;
-  width: auto;
-  display: block;
+/* rotierender Winkel für die Glanz-Kante */
+@property --logo-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Logo-Chip: Liquid Glass + neomorpher Schatten + animierte Glanz-Border */
+.logo-chip {
+  position: relative;
+  display: inline-flex;
   padding: 0.5rem 0.85rem;
   border-radius: 16px;
   background: rgba(248, 249, 250, 0.06);
-  border: 1px solid rgba(248, 249, 250, 0.22);
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
   box-shadow:
     var(--neo-out),
     inset 0 1px 0 rgba(248, 249, 250, 0.28);
+}
+
+/* die Border selbst: konischer Verlauf mit heller Glanz-Sichel, langsam rotierend */
+.logo-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px; /* Border-Stärke */
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--logo-angle),
+    rgba(248, 249, 250, 0.16) 0turn,
+    rgba(0, 119, 182, 0.45) 0.08turn,
+    rgba(255, 255, 255, 0.95) 0.14turn,
+    rgba(0, 119, 182, 0.45) 0.2turn,
+    rgba(248, 249, 250, 0.16) 0.34turn,
+    rgba(248, 249, 250, 0.16) 1turn
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: logo-border-spin 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes logo-border-spin {
+  to {
+    --logo-angle: 1turn;
+  }
+}
+
+.brand-logo {
+  box-sizing: content-box;
+  height: 3.4rem;
+  width: auto;
+  display: block;
 }
 
 /* Slogan neben dem Logo */
@@ -785,5 +830,9 @@ h3 {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .logo-chip::before {
+    animation: none;
   }
 }

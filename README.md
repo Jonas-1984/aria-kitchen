@@ -48,10 +48,12 @@ images/logo.svg     Wortmarke „ARIA": Buchstaben mit blauer Liquid-Glass-
 images/background.jpg  Fixierter Ganzseiten-Hintergrund
 ```
 
-Logo im Header/Footer als `<img class="brand-logo">` neben dem Slogan
-„آمیخته‌ای از هنر چوب و فلز". Der Chip um das Logo: Liquid Glass (transluzent
-+ `backdrop-filter` + feine Border + oberer Glanz) und neomorpher Schatten
-(`--neo-out`). Linienfarben liegen fest im SVG.
+Logo im Header/Footer als `<img class="brand-logo">` in `.logo-chip` neben
+dem Slogan „آمیخته‌ای از هنر چوب و فلز". Der Chip: Liquid Glass (transluzent
++ `backdrop-filter` + oberer Glanz) und neomorpher Schatten (`--neo-out`).
+Die Border ist ein konischer Verlauf mit heller Glanz-Sichel, der über
+`@property --logo-angle` langsam (10 s) rotiert; per `prefers-reduced-motion`
+abgeschaltet. Linienfarben liegen fest im SVG.
 
 Abschnitte: معرفی (Hero) · خدمات · مراحل کار · نمونه‌کارها · درباره ما · تماس
 
