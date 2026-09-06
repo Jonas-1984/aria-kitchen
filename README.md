@@ -40,13 +40,15 @@ und den `@font-face`-Block oben in `css/styles.css` aktivieren.
 index.html          Seiteninhalt (Header, Abschnitte, Footer) – lang="fa" dir="rtl"
 css/styles.css      Styles, Farb-Tokens als CSS-Variablen, Dana-Import
 js/main.js          Mobiles Menü, aktive Navigation, Footer-Jahr (persische Ziffern)
-images/logo.svg     Wortmarke „ARIA" (aus CAD-SVG bereinigt: enger viewBox,
-                    Buchstaben + Rahmen als Flächen gefüllt in #0077b6)
+images/logo.svg     Wortmarke „ARIA" als flaches Line-Art (dünne Linien:
+                    Rahmen #0077b6, Buchstaben #f8f9fa, non-scaling-stroke)
 images/background.jpg  Fixierter Ganzseiten-Hintergrund
 ```
 
 Logo im Header/Footer als `<img class="brand-logo">` neben dem Slogan
-„آمیخته‌ای از هنر چوب و فلز". Füllfarbe liegt fest im SVG (`#0077b6`).
+„آمیخته‌ای از هنر چوب و فلز". Der Chip um das Logo: Liquid Glass (transluzent
++ `backdrop-filter` + feine Border + oberer Glanz) und neomorpher Schatten
+(`--neo-out`). Linienfarben liegen fest im SVG.
 
 Abschnitte: معرفی (Hero) · خدمات · مراحل کار · نمونه‌کارها · درباره ما · تماس
 
