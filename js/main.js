@@ -1,8 +1,8 @@
 /* ============================================================
-   ARIA Küchen – Basis-Interaktionen
+   ARIA Küchen | آریا کابینت – Basis-Interaktionen
    - Mobiles Menü öffnen/schließen
    - Aktiven Navigationspunkt beim Scrollen markieren
-   - Jahr im Footer setzen
+   - Jahr im Footer setzen (persische Ziffern)
    ============================================================ */
 
 (function () {
@@ -16,14 +16,14 @@
     toggle.addEventListener("click", function () {
       var open = navList.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", String(open));
-      toggle.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
+      toggle.setAttribute("aria-label", open ? "بستن منو" : "باز کردن منو");
     });
 
     navList.addEventListener("click", function (event) {
       if (event.target.tagName === "A") {
         navList.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Menü öffnen");
+        toggle.setAttribute("aria-label", "باز کردن منو");
       }
     });
   }
@@ -59,9 +59,14 @@
     });
   }
 
-  /* ---------- Jahr im Footer ---------- */
+  /* ---------- Jahr im Footer (persische Ziffern) ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) {
-    yearEl.textContent = String(new Date().getFullYear());
+    var year = new Date().getFullYear();
+    try {
+      yearEl.textContent = year.toLocaleString("fa-IR", { useGrouping: false });
+    } catch (e) {
+      yearEl.textContent = String(year);
+    }
   }
 })();

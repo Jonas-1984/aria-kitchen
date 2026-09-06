@@ -1,10 +1,30 @@
 /* ============================================================
-   ARIA Küchen – Basis-Stylesheet
+   ARIA Küchen – Basis-Stylesheet  |  آریا کابینت
+   Sprache/Richtung: Persisch (fa), RTL
    Farben:
      --accent  #0077b6  (Firmenfarbe)
      --bg      #0d1b2a  (Hintergrund)
      --text    #f8f9fa  (Text / helle Elemente)
    ============================================================ */
+
+/* Schriftart Dana (Persisch). Muss vor allen anderen Regeln stehen. */
+@import url("https://fonts.cdnfonts.com/css/dana");
+
+/* --- Alternative: lizenzierte Dana / IRANSans lokal einbinden ---
+   Dateien nach  fonts/  legen und diesen Block aktivieren:
+@font-face {
+  font-family: "IRANSans";
+  src: url("../fonts/IRANSansX-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSans";
+  src: url("../fonts/IRANSansX-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+------------------------------------------------------------ */
 
 :root {
   --accent: #0077b6;
@@ -22,7 +42,7 @@
   --space-section: clamp(4rem, 9vw, 7rem);
 
   --radius: 10px;
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font: "Dana", "IRANSans", "IRANSansX", "Vazirmatn", Tahoma, system-ui, sans-serif;
 }
 
 /* ---------- Reset ---------- */
@@ -43,7 +63,7 @@ body {
   color: var(--text);
   font-family: var(--font);
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.85; /* Persisch braucht etwas mehr Zeilenhöhe */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -98,7 +118,7 @@ h3 {
   align-items: baseline;
   gap: 0.4rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  /* kein letter-spacing: würde persische Buchstabenverbindungen aufbrechen */
 }
 
 .brand-mark {
@@ -193,9 +213,8 @@ h3 {
 }
 
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--accent);
   margin-bottom: 1.25rem;
 }
