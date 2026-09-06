@@ -40,8 +40,9 @@ und den `@font-face`-Block oben in `css/styles.css` aktivieren.
 index.html          Seiteninhalt (Header, Abschnitte, Footer) – lang="fa" dir="rtl"
 css/styles.css      Styles, Farb-Tokens als CSS-Variablen, Dana-Import
 js/main.js          Mobiles Menü, aktive Navigation, Footer-Jahr (persische Ziffern)
-images/logo.svg     Wortmarke „ARIA" als flaches Line-Art (dünne Linien:
-                    Rahmen #0077b6, Buchstaben #f8f9fa, non-scaling-stroke)
+images/logo.svg     Wortmarke „ARIA": Buchstaben mit blauer Liquid-Glass-
+                    Füllung (transluzenter Verlauf) + feine Kontur,
+                    Rahmen als dünne Linien #0077b6
 images/background.jpg  Fixierter Ganzseiten-Hintergrund
 ```
 
