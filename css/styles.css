@@ -7,8 +7,8 @@
      --text    #f8f9fa  (Text / helle Elemente)
    ============================================================ */
 
-/* Schriftart Dana (Persisch). Muss vor allen anderen Regeln stehen. */
-@import url("https://fonts.cdnfonts.com/css/dana");
+/* Schriftart Dana (Persisch) wird per <link> im HTML geladen
+   (schneller als @import). Siehe index.html / privacy.html. */
 
 /* --- Alternative: lizenzierte Dana / IRANSans lokal einbinden ---
    Dateien nach  fonts/  legen und diesen Block aktivieren:

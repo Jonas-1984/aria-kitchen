@@ -53,7 +53,7 @@ und den `@font-face`-Block oben in `css/styles.css` aktivieren.
 ```
 index.html          Seiteninhalt (Header, Abschnitte, Footer) – lang="fa" dir="rtl"
 privacy.html        Datenschutzerklärung (persisch), verlinkt aus dem Kontaktformular
-css/styles.css      Styles, Farb-Tokens als CSS-Variablen, Dana-Import
+css/styles.css      Styles, Farb-Tokens als CSS-Variablen
 js/main.js          Mobiles Menü, aktive Navigation, Footer-Jahr (persische Ziffern)
 images/logo.svg     Wortmarke „ARIA": Buchstaben mit blauer Liquid-Glass-
                     Füllung (transluzenter Verlauf) + feine Kontur,
@@ -83,6 +83,29 @@ einem dunklen Liquid-Glass-Panel (`.hero-panel`, Neomorphism).
 python -m http.server 8000
 # http://localhost:8000
 ```
+
+## Live / Freigabe für den Kunden
+
+Automatischer Deploy auf **GitHub Pages** bei jedem Push auf `main`
+(`.github/workflows/deploy.yml`).
+
+**Link zum Teilen:** https://jonas-1984.github.io/aria-kitchen/
+
+Beim ersten Mal einmalig unter *GitHub → Repo → Settings → Pages* die Quelle
+auf **„GitHub Actions"** stellen (der Workflow versucht das über
+`enablement: true` automatisch). Danach ist die Seite ~1–2 Minuten nach jedem
+Push aktuell.
+
+## Performance
+
+- Bilder verkleinert, ohne sichtbaren Qualitätsverlust:
+  `images/background.jpg` 1,74 MB → 274 KB (liegt hinter einer ~90 %
+  deckenden Overlay-Schicht), `projects/project03.jpg` 775 KB → 321 KB
+  (2880 px → 1400 px). Übrige Bilder unverändert.
+- Dana-Schrift per `<link>` statt CSS-`@import` + `preconnect`.
+- Erstes Diashow-Bild `preload`, Projekt-Bilder `loading="lazy"
+  decoding="async"`.
+- SVG-Favicon, `theme-color`, Open-Graph-Tags für Link-Vorschauen.
 
 ## Status
 
