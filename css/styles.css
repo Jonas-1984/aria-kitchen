@@ -1,0 +1,469 @@
+/* ============================================================
+   ARIA Küchen – Basis-Stylesheet
+   Farben:
+     --accent  #0077b6  (Firmenfarbe)
+     --bg      #0d1b2a  (Hintergrund)
+     --text    #f8f9fa  (Text / helle Elemente)
+   ============================================================ */
+
+:root {
+  --accent: #0077b6;
+  --accent-hover: #0088cf;
+  --bg: #0d1b2a;
+  --bg-elevated: #10233a;
+  --text: #f8f9fa;
+  --text-muted: rgba(248, 249, 250, 0.66);
+
+  /* dünne Trennlinie zwischen den Parts */
+  --hairline: rgba(248, 249, 250, 0.12);
+
+  --container: 1120px;
+  --container-narrow: 720px;
+  --space-section: clamp(4rem, 9vw, 7rem);
+
+  --radius: 10px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* Platz für den fixierten Header */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.container.narrow {
+  max-width: var(--container-narrow);
+}
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 4.5rem;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.brand-mark {
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.brand-sub {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ---------- Navigation ---------- */
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list a {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  transition: color 0.15s ease;
+}
+
+.nav-list a:hover,
+.nav-list a.is-active {
+  color: var(--text);
+}
+
+.nav-cta {
+  color: var(--text) !important;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+  transition: background 0.15s ease;
+}
+
+.nav-cta:hover {
+  background: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: 0;
+  padding: 0.4rem;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* ---------- Abschnitte + Trennlinien ---------- */
+.section {
+  padding-block: var(--space-section);
+  border-top: 1px solid var(--hairline);
+}
+
+.section:first-of-type {
+  border-top: 0;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 2rem;
+}
+
+.section-intro {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 48ch;
+}
+
+/* ---------- Hero ---------- */
+.section--hero {
+  padding-block: clamp(5rem, 12vw, 9rem);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.section--hero h1 {
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
+  max-width: 20ch;
+}
+
+.lead {
+  margin-top: 1.5rem;
+  max-width: 56ch;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.98rem;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn--ghost {
+  border: 1px solid var(--hairline);
+  color: var(--text);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent);
+}
+
+/* ---------- Grid / Cards ---------- */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.card h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.15rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+/* ---------- Ablauf / Steps ---------- */
+.steps {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.steps li {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.steps li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.step-num {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.05rem;
+  min-width: 2.5rem;
+}
+
+.steps h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.25rem;
+}
+
+.steps p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+/* ---------- Platzhalter-Kacheln ---------- */
+.placeholder-tile {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border: 1px dashed var(--hairline);
+  border-radius: var(--radius);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Kontaktformular ---------- */
+.contact-form {
+  display: grid;
+  gap: 1.25rem;
+  max-width: 480px;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.96rem;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--hairline);
+  padding-block: 3rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem 2.5rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  transition: color 0.15s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.footer-legal {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .grid--3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--hairline);
+    padding: 0.5rem 0;
+    display: none;
+  }
+
+  .nav-list.is-open {
+    display: flex;
+  }
+
+  .nav-list li {
+    padding: 0;
+  }
+
+  .nav-list a {
+    display: block;
+    padding: 0.85rem clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .nav-cta {
+    border: 0;
+    border-radius: 0;
+  }
+
+  .nav-cta:hover {
+    background: var(--accent);
+  }
+
+  .grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
