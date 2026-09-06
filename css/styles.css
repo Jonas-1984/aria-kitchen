@@ -624,6 +624,7 @@ h3 {
 }
 
 .card {
+  position: relative;
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -631,6 +632,44 @@ h3 {
   border-radius: var(--radius);
   padding: 1.75rem;
   box-shadow: var(--glass-shadow), inset 0 1px 0 rgba(248, 249, 250, 0.08);
+  transition: box-shadow 0.25s ease;
+}
+
+/* beim Hover: glänzend-blaue Kante (statisch, nicht animiert) */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    #9bd8f8 0%,
+    #0077b6 45%,
+    rgba(0, 119, 182, 0.2) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card:hover {
+  box-shadow:
+    var(--glass-shadow),
+    inset 0 1px 0 rgba(248, 249, 250, 0.08),
+    0 0 22px -8px rgba(0, 119, 182, 0.55);
 }
 
 .card h3 {
