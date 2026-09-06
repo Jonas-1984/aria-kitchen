@@ -20,7 +20,7 @@
     });
 
     navList.addEventListener("click", function (event) {
-      if (event.target.tagName === "A") {
+      if (event.target.closest("a")) {
         navList.classList.remove("is-open");
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "باز کردن منو");

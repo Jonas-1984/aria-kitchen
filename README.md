@@ -14,7 +14,9 @@ Montage aus einer Hand (دکوراسیون داخلی، کمد دیواری، ک
 - Social-Media-Buttons im Footer: Uiverse-Stil (talhabangyal) – weiche
   Kachel, beim Hover eingedrückt + nach unten versetzt, Icon skaliert
 - Menüleiste: Uiverse-Stil (adamgiebl) – jeder Eintrag ein weiches
-  Neomorphism-Button, Hover = weiße Kante, aktiver Eintrag eingedrückt
+  Neomorphism-Button, Hover = weiße Kante, aktiver Eintrag eingedrückt.
+  Erster Eintrag = Home-Icon (nur Icon, Ziel `#top`); die übrigen mit
+  Lucide-Icon + Label (notebook-pen / briefcase / book-open / contact-round)
 - Absende-Button „ارسال پیام": Uiverse-Stil (elijahgummer) mit Bezel-Kante
   und rotierendem Icon, eingefärbt in Palette-Blau (`.styled-button`)
 - Footer: Social-Media (Instagram, LinkedIn, YouTube, Facebook) direkt unter
