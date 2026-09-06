@@ -69,6 +69,11 @@ abgeschaltet. Linienfarben liegen fest im SVG.
 
 Abschnitte: معرفی (Hero) · خدمات · مراحل کار · نمونه‌کارها · درباره ما · تماس
 
+Hero: Hintergrund-Diashow (`gallery/kitchen01–07.jpg`), Wechsel alle 6 s,
+neues Bild kommt von links + Fade; Bildkanten per `mask-image` (radialer
+Verlauf) weich ausgeblendet, ohne sichtbare Ränder. Der Hero-Text sitzt in
+einem dunklen Liquid-Glass-Panel (`.hero-panel`, Neomorphism).
+
 ## Lokal ansehen
 
 `index.html` im Browser öffnen, oder ein kleiner Server:

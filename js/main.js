@@ -59,6 +59,17 @@
     });
   }
 
+  /* ---------- Hero-Diashow: alle 6 Sekunden wechseln ---------- */
+  var slides = document.querySelectorAll(".hero-slide");
+  if (slides.length > 1) {
+    var slideIdx = 0;
+    setInterval(function () {
+      slides[slideIdx].classList.remove("is-active");
+      slideIdx = (slideIdx + 1) % slides.length;
+      slides[slideIdx].classList.add("is-active");
+    }, 6000);
+  }
+
   /* ---------- Jahr im Footer (persische Ziffern) ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) {
