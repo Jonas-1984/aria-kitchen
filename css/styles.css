@@ -777,25 +777,34 @@ h3 {
   font-size: 0.96rem;
 }
 
-/* ---------- Platzhalter-Kacheln ---------- */
-.placeholder-tile {
+/* ---------- Projekt-Kacheln (نمونه‌کارها) ---------- */
+.project-tile {
   position: relative;
+  margin: 0;
   aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg-elevated);
-  border: 1px dashed var(--hairline);
   border-radius: var(--radius);
-  color: var(--text-muted);
-  font-size: 0.95rem;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.project-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-tile:hover img {
+  transform: scale(1.05);
 }
 
 /* beim Hover: dünne, glänzend-blaue Linie, die durch einige Ecken wandert */
-.placeholder-tile::before {
+.project-tile::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   padding: 1.5px;
   border-radius: inherit;
   background: conic-gradient(
@@ -824,7 +833,7 @@ h3 {
   pointer-events: none;
 }
 
-.placeholder-tile:hover::before {
+.project-tile:hover::before {
   opacity: 1;
   animation: tile-shine 4s linear infinite;
 }
@@ -1163,7 +1172,7 @@ h3 {
   }
 
   .logo-chip::before,
-  .placeholder-tile:hover::before {
+  .project-tile:hover::before {
     animation: none !important;
   }
 
